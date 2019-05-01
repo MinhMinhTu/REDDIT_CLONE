@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { BrowserRouter ,Route, Switch } from 'react-router-dom';
 
 
-function App() {
-  return (
-    <div className="App">
-     hello world
-    </div>
-  );
+import Home from './pages/Home'
+import Register from './pages/Register'
+
+class App extends Component {
+  render() {
+    return (
+     <BrowserRouter>
+       <Switch>
+         <Route exact path='/' component={Home}/>
+         <Route path='/Register' component={Register}/>
+       </Switch>
+     </BrowserRouter>
+    );
+  }
 }
 
 export default App;
