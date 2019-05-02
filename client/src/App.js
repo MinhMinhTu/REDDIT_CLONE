@@ -1,31 +1,40 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
+import { Provider } from 'react-redux'
 
-//header
-import Home from './pages/Home'
+// store
+import store from './store'
 
-//page
-import Register from './pages/Register'
-import Header from './container/Header'
-
-//theme
+// theme
 import theme from './theme'
+// header
+import Header from './containers/Header'
+
+// pages
+import Home from './pages/Home'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import CreatePost from './pages/CreatePost'
 
 class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={theme}>
-        <BrowserRouter>
-          <>
-            <Header />
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/Register' component={Register} />
-            </Switch>
-          </>
-        </BrowserRouter>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <BrowserRouter>
+            <>
+              <Header />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" component={Login} />
+                <Route path="/create-post" component={CreatePost}/>
+              </Switch>
+            </>
+          </BrowserRouter>
+        </ThemeProvider>
+      </Provider>
     );
   }
 }

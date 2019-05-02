@@ -1,19 +1,20 @@
 import React from 'react'
 import Container from '../components/Container'
 import Section from '../components/Section'
-import RegisterForm from '../containers/RegisterForm'
+import LoginForm from '../containers/LoginForm'
 
 
-class Register extends React.Component {
+class Login extends React.Component {
     render () {
         return (
             <Container small>
                 <Section padded>
-                    <RegisterForm />
+                    <LoginForm />
                 </Section>
             </Container>
         )
     }
 }
 
-export default Register
+
+export default Login

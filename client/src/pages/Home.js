@@ -1,12 +1,24 @@
 import React from 'react'
+import styled from 'styled-components'
 
+import Container from '../components/Container'
+import Sidebar from '../containers/Sidebar'
+import ListPosts from '../containers/Listposts'
 
-class Home extends React.Component{
-    render(){
+const StyledContainer = styled(Container)`
+    display: flex;
+    flex-direction: row;
+`
+
+class Home extends React.Component {
+    render () {
         return (
-            <div>Home Page</div>
+            <StyledContainer>
+                <ListPosts />
+                <Sidebar />
+            </StyledContainer>
         )
     }
 }
 
-export default Home;
+export default Home
